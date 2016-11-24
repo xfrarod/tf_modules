@@ -28,6 +28,11 @@ variable "tags" {
 variable "key_name" {
   description = "Key pair name to use"
 }
+
+variable "security_groups" {
+  description = "A list of security group names to associate with the created instance"
+}
+
 // Variables for providers used in this module
 variable "aws_access_key" {}
 variable "aws_secret_key" {}
