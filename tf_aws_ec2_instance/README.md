@@ -35,7 +35,6 @@ module "ec2_instance" {
   aws_secret_key = "${var.aws_secret_key}"
   aws_region = "${var.aws_region}"
   subnet_id = "${var.subnet_id}"
-#  number_of_instances = "${number_of_instances}"
   key_name = "{var.key_name}"
   security_groups = "{var.security_groups}"
 }
@@ -50,6 +49,5 @@ module "ec2_instance" {
 - instance_type
 - subnet_id
 - ami_id
-- number_of_instances
 - key_name
 - security_groups
