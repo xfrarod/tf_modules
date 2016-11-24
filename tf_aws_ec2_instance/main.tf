@@ -8,7 +8,7 @@ provider "aws" {
 // EC2 Instance Resource for Module
 resource "aws_instance" "ec2_instance" {
     ami = "${var.ami_id}"
-    count = "${var.number_of_instances}"
+#    count = "${var.number_of_instances}"
     subnet_id = "${var.subnet_id}"
     instance_type = "${var.instance_type}"
     key_name = "${var.key_name}"
@@ -17,6 +17,7 @@ resource "aws_instance" "ec2_instance" {
         // Takes the instance_name input variable and adds
         //  the count.index to the name., e.g.
         //  "example-host-web-1"
-        Name = "${var.instance_name}-${count.index}"
+#        Name = "${var.instance_name}-${count.index}"
+        Name = "${var.instance_name}"
     }
 }
