@@ -9,12 +9,14 @@ Module Input Variables
 ----------------------
 
 - `ami_id` - The AMI to use
-- `number_of_instances`  - The number of instances you want made
-- `subnet_id - The VPC subnet to place the instance in
+#- `number_of_instances`  - The number of instances you want made
+- `subnet_id` - The VPC subnet to place the instance in
 - `instance_type` - The EC2 instance type, e.g. m1.small
 - `instance_name` - The instance name you want, this is used to populate
     the Name tag.
 - `tags` - A map for setting AWS tags.
+- `key_name` - Key pair name to use.
+- `security_groups` - A list of security group names to associate with the created instance.
 
 Usage
 -----
@@ -33,7 +35,9 @@ module "ec2_instance" {
   aws_secret_key = "${var.aws_secret_key}"
   aws_region = "${var.aws_region}"
   subnet_id = "${var.subnet_id}"
-  number_of_instances = "${number_of_instances}"  
+#  number_of_instances = "${number_of_instances}"
+  key_name = "{var.key_name}"
+  security_groups = "{var.security_groups}"
 }
 ```
 
@@ -47,3 +51,5 @@ module "ec2_instance" {
 - subnet_id
 - ami_id
 - number_of_instances
+- key_name
+- security_groups
